@@ -1,3 +1,3 @@
-# website for my company being 
+# website for my company Leystel Nigeria Limited
 
- Site is under development
+ Site is currently under development and is on the mobile stage

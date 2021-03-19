@@ -54,9 +54,15 @@ header ul {
   .mobile-nav {
     position: fixed;
     height: 100%;
-    width: 50%;
+    width: 0;
     top: 0;
     right: 0;
     opacity: 0;
     background-color: #022330;
+    transition: width 0.5s, opacity 0.2s;
+  }
+
+  .show-mobile-nav {
+    opacity: 1;
+    width: 50%;
   }

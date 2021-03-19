@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -9,6 +9,12 @@ import './Header.css';
 
 
 const Header = (props) => {
+
+  const [showMobileNav, setShowMobileNav ] = useState(false) //set state to show mobile navigation
+
+  const showMobileNavHandler = () => {
+    setShowMobileNav(true)
+  }
     return ( 
         <Aux>
             <div className="connect-info">
@@ -21,7 +27,7 @@ const Header = (props) => {
               <div className="navbar-brand">
                 <img className="navbar-brand__image" src={leystel_logo} alt="leystel logo"/>    
               </div>
-              <div className="menu-button">
+              <div className="menu-button" onClick={showMobileNavHandler}>
                  <MenuIcon/>                
               </div>
 
@@ -34,7 +40,7 @@ const Header = (props) => {
                 </ul>
               </div>
             </nav>
-            <nav className="mobile-nav">
+            <nav className={`mobile-nav ${showMobileNav && 'show-mobile-nav'}`}>
               <div></div>
             </nav>
         </Aux>
