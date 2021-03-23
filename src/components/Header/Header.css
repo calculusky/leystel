@@ -1,14 +1,14 @@
 /* header */
-header ul {
+header ul, li {
     padding: 0;
     list-style: none;
     margin: 0;
   }
   
   header .connect-info {
-    height: 4rem;
+    height: 3.5rem;
     padding: 0.3rem 0.5rem;
-    font-size: 1rem;
+    font-size: 0.7rem;
     background-color: #0689bd;
     color: #fff;
   }
@@ -18,7 +18,8 @@ header ul {
     color: inherit;
   }
   
-  .connect-info__item span{
+  .connect-info__item span svg{
+    font-size: 1.3rem;
     color: rgb(223, 204, 204);
     vertical-align: middle;
     
@@ -37,7 +38,7 @@ header ul {
   }
   
   .navbar .menu-button svg {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0 auto;
     display: block;
   }
@@ -54,7 +55,7 @@ header ul {
     list-style: none;
   }
   .navbar-link .navbar-link__item {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-right: 4rem;
   }
   .navbar-link .navbar-link__item:last-child{
@@ -103,7 +104,7 @@ header ul {
     align-items: center;
     justify-content: center;
     padding: 3rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .mobile-nav-link__item {
@@ -142,7 +143,7 @@ header ul {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 0.8rem;
       margin: 0;
       height: 100%;
       /* background-color: coral; */
@@ -154,16 +155,16 @@ header ul {
 
     /* navigation */
     .navbar {
-      padding-left: 8rem;
-      padding-right: 8rem;
-      height: 6rem;
+      padding-left: 7rem;
+      padding-right: 7rem;
+      height: 5rem;
     }
     .navbar .menu-button {
       display: none;
     }
 
     .navbar-link .navbar-link__item {
-      margin-right: 5rem;
+      margin-right: 4rem;
     }
     .navbar-link .navbar-link__item:last-child{
      margin-right: 0;
@@ -171,9 +172,9 @@ header ul {
 
     .navbar-brand .navbar-brand__image {
       display: block;
-      max-width: 12rem;
+      max-width: 10rem;
       width: 100%;
-      height: 5rem;
+      height: 4rem;
     }
 
     .navbar-link {
