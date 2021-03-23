@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import { Link } from 'react-router-dom';
 import Aux from '../../hoc/Auxiliary';
 import leystel_logo from '../../assets/images/leystel_logo.jpg';
@@ -10,11 +11,38 @@ import './Header.css';
 
 const Header = (props) => {
 
-  const [showMobileNav, setShowMobileNav ] = useState(false) //set state to show mobile navigation
+  const [ mobileNavCancelButton, setMobileNavCancelButton ] = useState(false);
+  const [ showMobileNav, setShowMobileNav ] = useState(false)
+  const [ closeMobileNav, setCloseMobileNav ] = useState(false)
 
+
+  //show mobile nav
   const showMobileNavHandler = () => {
-    setShowMobileNav(true)
+  setShowMobileNav(true);
+  setMobileNavCancelButton(true);
   }
+
+  //close mobile nav
+  const closeMobileNavHandler = () => {
+    setShowMobileNav(false);
+    setCloseMobileNav(true);
+    setTimeout(() => { 
+      setCloseMobileNav(false);
+      setMobileNavCancelButton(false)
+    }, 260)
+  }
+
+  //set class for mobile navigation
+  const mobileNavClass = () => {
+    if(showMobileNav){
+      return 'mobile-nav show-mobile-nav';
+    }
+    if(closeMobileNav){
+      return 'mobile-nav close-mobile-nav';
+    }
+    return 'mobile-nav';
+  }
+  
     return ( 
         <Aux>
             <div className="connect-info">
@@ -27,21 +55,32 @@ const Header = (props) => {
               <div className="navbar-brand">
                 <img className="navbar-brand__image" src={leystel_logo} alt="leystel logo"/>    
               </div>
-              <div className="menu-button" onClick={showMobileNavHandler}>
-                 <MenuIcon/>                
+              <div className="menu-button" onClick={showMobileNavHandler}> 
+                  <MenuIcon/> 
               </div>
-
               <div className="navbar-link">
                 <ul className="navbar-link__items">
-                  <li className="navbar-link__item"><Link>Products</Link></li>
-                  <li className="navbar-link__item"><Link>Services</Link></li>
-                  <li className="navbar-link__item"><Link>Industries</Link></li>
-                  <li className="navbar-link__item"><Link>Company</Link></li>
+                  <li className="navbar-link__item"><Link to="">Products</Link></li>
+                  <li className="navbar-link__item"><Link to="">Services</Link></li>
+                  <li className="navbar-link__item"><Link to="">Industries</Link></li>
+                  <li className="navbar-link__item"><Link to="">Company</Link></li>
                 </ul>
               </div>
             </nav>
-            <nav className={`mobile-nav ${showMobileNav && 'show-mobile-nav'}`}>
-              <div></div>
+
+            <div className={`${showMobileNav && 'backdrop'}`} onClick={closeMobileNavHandler}></div>
+            <nav className={mobileNavClass()}>
+              {
+                 mobileNavCancelButton && <div className="mobile-nav__close" onClick={closeMobileNavHandler}> <CloseRoundedIcon/> </div>
+              }
+              <div className="mobile-nav-link">
+                <ul className="mobile-nav-link__items">
+                  <li className="mobile-nav-link__item"><Link to="">Products</Link></li>
+                  <li className="mobile-nav-link__item"><Link to="">Services</Link></li>
+                  <li className="mobile-nav-link__item"><Link to="">Industries</Link></li>
+                  <li className="mobile-nav-link__item"><Link to="">Company</Link></li>
+                </ul>
+              </div>
             </nav>
         </Aux>
      );

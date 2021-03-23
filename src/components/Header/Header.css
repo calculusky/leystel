@@ -8,7 +8,7 @@ header ul {
   header .connect-info {
     height: 4rem;
     padding: 0.3rem 0.5rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
     background-color: #0689bd;
     color: #fff;
   }
@@ -19,6 +19,7 @@ header ul {
   }
   
   .connect-info__item span{
+    color: rgb(223, 204, 204);
     vertical-align: middle;
     
   }
@@ -30,18 +31,38 @@ header ul {
   /* header--navigation */
   .navbar {
     height: 4rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    /* background-color: lightcoral; */
   }
   
   .navbar .menu-button svg {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0 auto;
     display: block;
   }
   
   .navbar-link {
     display: none;
+    padding: 0;
+    /* background-color: khaki; */
+  }
+  .navbar-link .navbar-link__items {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .navbar-link .navbar-link__item {
+    font-size: 1.5rem;
+    margin-right: 4rem;
+  }
+  .navbar-link .navbar-link__item:last-child{
+   margin-right: 0;
+  }
+  .navbar-link .navbar-link__item a {
+    color: #0689bd;
+    text-decoration: none;
   }
   
   .navbar-brand .navbar-brand__image {
@@ -56,13 +77,106 @@ header ul {
     height: 100%;
     width: 0;
     top: 0;
+    z-index: 2;
     right: 0;
-    opacity: 0;
+    color: #fff;
     background-color: #022330;
-    transition: width 0.5s, opacity 0.2s;
+    transition: width 0.3s linear;
+  }
+
+  .mobile-nav__close {
+    height: 3.5rem;
+    padding: 0.2rem;
+  }
+
+  .mobile-nav__close svg{
+    font-size: 2rem;
+    position: fixed;
+    right: 1.5rem;
+    top: 0.9rem;
+   
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    margin: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav-link__item {
+    margin-top: 1.7rem;
+  }
+
+  .mobile-nav-link__item:hover,
+   .menu-button:hover,
+   .mobile-nav__close:hover{
+   cursor: pointer;
+  }
+
+  .mobile-nav-link a {
+    color: inherit;
+    text-decoration: none;
   }
 
   .show-mobile-nav {
-    opacity: 1;
+    display: block;
     width: 50%;
+  }
+
+  .close-mobile-nav {
+    width: 0;
+  }
+
+
+
+  @media (min-width: 48rem){
+
+    header .connect-info {
+      padding: 0;
+    }
+
+    header .connect-info .connect-info__items{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin: 0;
+      height: 100%;
+      /* background-color: coral; */
+    }
+
+    header .connect-info .connect-info__item {
+      margin: 0 3rem;
+    }
+
+    /* navigation */
+    .navbar {
+      padding-left: 8rem;
+      padding-right: 8rem;
+      height: 6rem;
+    }
+    .navbar .menu-button {
+      display: none;
+    }
+
+    .navbar-link .navbar-link__item {
+      margin-right: 5rem;
+    }
+    .navbar-link .navbar-link__item:last-child{
+     margin-right: 0;
+    }
+
+    .navbar-brand .navbar-brand__image {
+      display: block;
+      max-width: 12rem;
+      width: 100%;
+      height: 5rem;
+    }
+
+    .navbar-link {
+      display: block;
+    }
   }
