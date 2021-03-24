@@ -3,6 +3,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Link } from 'react-router-dom';
 import Aux from '../../hoc/Auxiliary';
 import leystel_logo from '../../assets/images/leystel_logo.jpg';
@@ -76,9 +77,30 @@ const Header = (props) => {
               <div className="mobile-nav-link">
                 <ul className="mobile-nav-link__items">
                   <li className="mobile-nav-link__item"><Link to="">Products</Link></li>
-                  <li className="mobile-nav-link__item"><Link to="">Services</Link></li>
+                  <li className="mobile-nav-link__item dropdown">
+                     <span>Services<ArrowDropDownIcon/></span>
+                     <div className="dropdown-content">
+                       <ul>
+                         <li><Link to="">Network System Design</Link></li>
+                         <li><Link to="">Network Management System</Link></li>
+                         <li><Link to="">Oil and Gas Support</Link></li>
+                         <li><Link to="">Training</Link></li>
+                       </ul>
+                     </div>
+                    </li>
                   <li className="mobile-nav-link__item"><Link to="">Industries</Link></li>
-                  <li className="mobile-nav-link__item"><Link to="">Company</Link></li>
+                  <li className="mobile-nav-link__item dropdown">
+                     <span>Company<ArrowDropDownIcon/></span>
+                     <div className="dropdown-content">
+                       <ul>
+                         <li><Link to="">Portfolio</Link></li>
+                         <li><Link to="">Management Team</Link></li>
+                         <li><Link to="">Partners and Clients</Link></li>
+                         <li><Link to="">About Us</Link></li>
+                         <li><Link to="">Contact Us</Link></li>
+                       </ul>
+                     </div>
+                  </li>
                 </ul>
               </div>
             </nav>
