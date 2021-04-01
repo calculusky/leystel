@@ -77,20 +77,27 @@ const Header = (props) => {
               <div className="mobile-nav-link">
                 <ul className="mobile-nav-link__items">
                   <li className="mobile-nav-link__item"><Link to="">Products</Link></li>
+
+
                   <li className="mobile-nav-link__item dropdown">
                      <span>Services<ArrowDropDownIcon/></span>
+                     {/* <span>Services</span> */}
                      <div className="dropdown-content">
                        <ul>
-                         <li><Link to="/t">Network System Design</Link></li>
+                         <li><Link to="">Network System Design</Link></li>
                          <li><Link to="">Network Management System</Link></li>
                          <li><Link to="">Oil and Gas Support</Link></li>
                          <li><Link to="">Training</Link></li>
                        </ul>
                      </div>
                     </li>
+
+
+
                   <li className="mobile-nav-link__item"><Link to="">Industries</Link></li>
                   <li className="mobile-nav-link__item dropdown">
-                     <span>Company<ArrowDropDownIcon/></span>
+                     {/* <span>Company<ArrowDropDownIcon/></span> */}
+                     <span>Company</span>
                      <div className="dropdown-content">
                        <ul>
                          <li><Link to="">Portfolio</Link></li>
