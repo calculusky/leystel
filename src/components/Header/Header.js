@@ -61,10 +61,30 @@ const Header = (props) => {
               </div>
               <div className="navbar-link">
                 <ul className="navbar-link__items">
-                  <li className="navbar-link__item"><Link to="">Products</Link></li>
-                  <li className="navbar-link__item"><Link to="">Services</Link></li>
-                  <li className="navbar-link__item"><Link to="">Industries</Link></li>
-                  <li className="navbar-link__item"><Link to="">Company</Link></li>
+                  <li className="navbar-link__item"><Link to="">Home</Link></li>
+                  <li className="navbar-link__item dropdown"><Link to="">About</Link>
+                     <div className="dropdown-content">
+                       <ul>
+                         <li><Link to="">Portfolio</Link></li>
+                         <li><Link to="">Management Team</Link></li>
+                         <li><Link to="">Partners</Link></li>
+                         <li><Link to="">Clients</Link></li>
+                         <li><Link to="">About Us</Link></li>
+                       </ul>
+                     </div>
+                  </li>
+                  <li className="navbar-link__item dropdown"><Link to="">Solutions</Link>
+                     <div className="dropdown-content">
+                       <ul>
+                         <li><Link to="">Network Design and Management</Link></li>
+                         <li><Link to="">IT and Database Security</Link></li>
+                         <li><Link to="">Oil and Gas Support</Link></li>
+                         <li><Link to="">Consulting</Link></li>
+                         <li><Link to="">Training</Link></li>
+                       </ul>
+                     </div>
+                  </li>
+                  <li className="navbar-link__item"><Link to="">Contact</Link></li>
                 </ul>
               </div>
             </nav>
@@ -76,38 +96,35 @@ const Header = (props) => {
               }
               <div className="mobile-nav-link">
                 <ul className="mobile-nav-link__items">
-                  <li className="mobile-nav-link__item"><Link to="">Products</Link></li>
+                <li className="mobile-nav-link__item nav-menu__item--name"><Link to="">Home</Link></li>
+                  <li className="mobile-nav-link__item dropdown">
+                     <div className="nav-menu__item--name">About<ArrowDropDownIcon/></div>
+                     <div className="dropdown-content">
+                       <ul>
+                         <li><Link to="">Portfolio</Link></li>
+                         <li><Link to="">Management Team</Link></li>
+                         <li><Link to="">Partners</Link></li>
+                         <li><Link to="">Clients</Link></li>
+                         <li><Link to="">About Us</Link></li>
+                       </ul>
+                     </div>
+                  </li>
 
 
                   <li className="mobile-nav-link__item dropdown">
-                     <span>Services<ArrowDropDownIcon/></span>
-                     {/* <span>Services</span> */}
+                     <div className="nav-menu__item--name">Solutions<ArrowDropDownIcon/></div>
                      <div className="dropdown-content">
                        <ul>
-                         <li><Link to="">Network System Design</Link></li>
-                         <li><Link to="">Network Management System</Link></li>
+                         <li><Link to="">Network Design and Management</Link></li>
+                         <li><Link to="">IT and Database Security</Link></li>
                          <li><Link to="">Oil and Gas Support</Link></li>
+                         <li><Link to="">Consulting</Link></li>
                          <li><Link to="">Training</Link></li>
                        </ul>
                      </div>
                     </li>
 
-
-
-                  <li className="mobile-nav-link__item"><Link to="">Industries</Link></li>
-                  <li className="mobile-nav-link__item dropdown">
-                     {/* <span>Company<ArrowDropDownIcon/></span> */}
-                     <span>Company</span>
-                     <div className="dropdown-content">
-                       <ul>
-                         <li><Link to="">Portfolio</Link></li>
-                         <li><Link to="">Management Team</Link></li>
-                         <li><Link to="">Partners and Clients</Link></li>
-                         <li><Link to="">About Us</Link></li>
-                         <li><Link to="">Contact Us</Link></li>
-                       </ul>
-                     </div>
-                  </li>
+                  <li className="mobile-nav-link__item nav-menu__item--name"><Link to="">Contact</Link></li>
                 </ul>
               </div>
             </nav>
